@@ -10,7 +10,7 @@ class Program
         int versuche = 0;
         bool richtig = false;
 
-        Console.WriteLine("🎯 Zahlen-Raten-Spiel!");
+        Console.WriteLine(" Zahlen-Raten-Spiel!");
         Console.WriteLine("Rate eine Zahl zwischen 1 und 10");
 
         while (!richtig)
@@ -23,15 +23,15 @@ class Program
                 versuche++;
             if (versuch < geheimZahl)
                 {
-                    Console.WriteLine("Zu niedrig ❌");
+                    Console.WriteLine("Zu niedrig ");
                 }
                 else if (versuch > geheimZahl)
                 {
-                    Console.WriteLine("Zu hoch ❌");
+                    Console.WriteLine("Zu hoch ");
                 }
                 else
                 {
-                    Console.WriteLine($"Richtig! 🎉 Du hast {versuche} Versuch(e) gebraucht.");
+                    Console.WriteLine($"Richtig!  Du hast {versuche} Versuch(e) gebraucht.");
                     richtig = true;
                 }
             }
