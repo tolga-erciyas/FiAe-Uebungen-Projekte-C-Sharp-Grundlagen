@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
 using System.Runtime.Remoting;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,6 +21,13 @@ namespace Einstieg1
 
         static void Aufgabe1()
         {
+            //Erstellen Sie ein kleines Programm, welches vom Anwender zwei ganze Zahlen abfragt und dann 
+            //ermittelt, welche der beiden Zahlen die größere Zahl ist und welche die kleinere Zahl ist. 
+            //Erstellen Sie dazu in Ihrem Programm zunächst zwei Funktionen mit den Namen Min und Max:
+            //Verwenden Sie diese Funktionen, um festzustellen welche der beiden Zahlen die größere bzw. die
+            //kleinere Zahl ist. 
+
+
             Console.WriteLine("Gebe 2 Zahlen ein:");
             int a = ReadInt();
             int b = ReadInt();
