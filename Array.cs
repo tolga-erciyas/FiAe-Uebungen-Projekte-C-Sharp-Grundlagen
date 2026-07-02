@@ -418,7 +418,6 @@ namespace Einstieg1
             for (int i = 0; i <= zahl; i++)
             {
 
-
             }
             
                
