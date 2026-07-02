@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Einstieg1.Funktionen</StartupObject>
+    <StartupObject>Einstieg1.Array</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

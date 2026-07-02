@@ -5,6 +5,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Net;
 using System.Runtime.ConstrainedExecution;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace Einstieg1
             //Aufgabe41();
             //Aufgabe42();
             //Aufgabe51();
+            BonusaufgabePrimzahl();
         }
 
         static void Aufgabe11()
@@ -393,9 +395,33 @@ namespace Einstieg1
 
         }
 
-        static void Aufgabe51()
+        static void BonusaufgabePrimzahl()
         {
 
+            //Der Anwender gibt eine ganze Zahl größer als 1 ein.Das Programm soll ausgeben, ob diese Zahl eine Primzahl ist oder nicht.
+            //Eine Primzahl ist eine Zahl, die nur durch 1 und durch sich selbst ohne Rest teilbar ist(z.B. 2, 3, 5, 7, 11, 13). Die 4 ist keine Primzahl, weil sie auch durch 2 teilbar ist. Die 9 ist keine, weil sie durch 3 teilbar ist.
+            //Beispiel: Eingabe 7 → „7 ist eine Primzahl". Eingabe 9 → „9 ist keine Primzahl".
+
+            // Pseudocode:
+            //1.Ausgabe: "Gib eine Zahl Größer als 1 ein"
+            //2.int Variable zahl erstellen und mit int.Parse, Test in Zahl umwandeln.
+            //. int zahl = int.Parse(Console.ReadLine());
+            //3.mit einer for schleife gehen wir alle zahlen bis zur eingabe zahl durch :
+            //. wir prüfen ob sie außer mit 1 und sich selbst ohne rest noch mit andern  zahlen teilbar ist 
+            //. wenn ja Ausgabe:($"{zahl} ist keine Primzahl"); }
+            //. else
+            //. Ausgabe:($"{zahl} ist eine Primzahl"); 
+
+            Console.WriteLine("Bitte gib eine Ganzzahl ein");
+            int zahl = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i <= zahl; i++)
+            {
+
+
+            }
+            
+               
         }
 
 

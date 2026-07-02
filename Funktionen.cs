@@ -15,8 +15,8 @@ namespace Einstieg1
         static void Main(string[] args)
         {
             //Aufgabe1();
-            //Aufgabe11();
-            Aufgabe12();
+            Aufgabe11();
+            //Aufgabe12();
         }
 
         static void Aufgabe1()
@@ -111,9 +111,25 @@ namespace Einstieg1
 
         static void Aufgabe11()
         {
+            //Schreiben Sie ein Programm mit einer Funktion „Hallo()“. Diese Funktion soll auf der Konsole „Hallo 
+            //Welt“ ausgeben.Die Funktion hat keine Übergabeparameter und keinen Rückgabewert. Rufen Sie
+            //aus dem „Hauptprogramm“ diese Methode auf.
+
+            //Pseudocode:
+
+            //1. in Main: ich brauche eine Funktion ohne Rückgabewert
+            //2.Funktion erstellen - static void Hallo()
+            //. { Console.WriteLine("Hallo Welt") }
+            //3. In Main aufrufen: Hallo();
+            Hallo("Tolga");
 
         }
 
+        static void Hallo( string name)
+        {
+
+            Console.WriteLine($"Hallo! {name}");
+        }
 
 
 
