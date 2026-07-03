@@ -22,6 +22,7 @@ namespace Einstieg1
             //Aufgabe31();
             //Aufgabe41();
             //Aufgabe61();
+            //BonusaufgabePrimzahl();
         }
         static void Aufgabe11()
         {
@@ -250,8 +251,8 @@ namespace Einstieg1
             Console.WriteLine(lkw);
             Console.WriteLine(lkwstau);
         }
-        
-        static void Aufgabe61() 
+
+        static void Aufgabe61()
         {
             //Erstellen Sie ein Programm(Windows / Console), welches zwei beliebige ganze Zahlen, die größer als
             //0 sind, mithilfe der "Russischen Multiplikation" multipliziert! Die " Russischen Multiplikation" arbeitet
@@ -295,18 +296,49 @@ namespace Einstieg1
 
             Console.WriteLine($"\nErgebnis: {x} * {y} = {summe}");
 
+        }
+
+        static void BonusaufgabePrimzahl()
+        {
+
+            //Der Anwender gibt eine ganze Zahl größer als 1 ein.Das Programm soll ausgeben, ob diese Zahl eine Primzahl ist oder nicht.
+            //Eine Primzahl ist eine Zahl, die nur durch 1 und durch sich selbst ohne Rest teilbar ist(z.B. 2, 3, 5, 7, 11, 13). Die 4 ist keine Primzahl, weil sie auch durch 2 teilbar ist. Die 9 ist keine, weil sie durch 3 teilbar ist.
+            //Beispiel: Eingabe 7 → „7 ist eine Primzahl". Eingabe 9 → „9 ist keine Primzahl".
+
+            // Pseudocode:
+            //1.Ausgabe: "Gib eine Zahl Größer als 1 ein"
+            //2.int Variable zahl erstellen und mit int.Parse, Text in Zahl umwandeln.
+            //. int zahl = int.Parse(Console.ReadLine());
+            //3.Bool Variable Primzahl = true;
+            //4.mit einer for schleife gehen wir alle zahlen bis zur eingabe zahl durch :
+            //. zahl % (2 bis < zahl) == 0 dann false
+            //. 5.if (primzahl)
+            //. Ausgabe: ist eine primzahl
+            //. else
+            //. Ausgabe: ist keine primzahl 
+
+            Console.WriteLine("Bitte gib eine Ganzzahl ein");
+            int zahl = int.Parse(Console.ReadLine());
+            bool primzahl = true;
+            for (int i = 2; i < zahl; i++)
+            {
+                if (zahl % i == 0)
+                {
+                    primzahl = false;
+
+                }
 
 
 
-
-
-
-
-
-
-
-
-
+            }
+            if (primzahl)
+            {
+                Console.WriteLine($"{zahl} ist eine Primzahl");
+            }
+            else
+            {
+                Console.WriteLine($"{zahl} ist keine Primzahl");
+            }
         }
 
 
@@ -323,7 +355,18 @@ namespace Einstieg1
 
 
 
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
