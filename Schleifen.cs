@@ -22,7 +22,7 @@ namespace Einstieg1
             //Aufgabe31();
             //Aufgabe41();
             //Aufgabe61();
-            //BonusaufgabePrimzahl();
+            BonusaufgabePrimzahl();
         }
         static void Aufgabe11()
         {

@@ -5,6 +5,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
 using System.Runtime.Remoting;
 using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,8 +16,13 @@ namespace Einstieg1
         static void Main(string[] args)
         {
             //Aufgabe1();
-            Aufgabe11();
+            //Aufgabe11();
             //Aufgabe12();
+            //Aufgabe13();
+            //Aufgabe14();
+            //Aufgabe15();
+
+
         }
 
         static void Aufgabe1()
@@ -131,13 +137,163 @@ namespace Einstieg1
             Console.WriteLine($"Hallo! {name}");
         }
 
+        static void Aufgabe13()
+        {
+            //Schreiben Sie ein Programm mit einer Funktion, die eine ganze Zahl entgegennimmt und prüft, ob die
+            //Zahl gerade ist.Testen Sie diese Funktion.
+            Console.WriteLine("Gib eine Zahl ein");
+            int zahl = ReadInt();
+            gerade(zahl);
+            
+            
+
+        }
 
 
 
-    }   
-        
+        static void gerade(int zahl)
+        {
+            if(zahl % 2 == 0)
+            {
+                Console.WriteLine("ist gerade");
+            }
+            else
+                Console.WriteLine("ist nicht gerade");
+        }
 
-        
+        static void Aufgabe14()
+        {
+            //Schreiben Sie ein Programm mit einer Funktion, die zwei ganze Zahlen entgegennimmt und
+            //vertauscht.Überlegen Sie genau, ob die Funktion etwas zurückgeben muss und welchem Typ dies
+            //ggfs.Ist.Beachten Sie auch, wie die beiden Zahlen an die Funktion übergeben werden müssen.
+
+
+
+            int s1 = ReadInt();
+            int s2 = ReadInt();
+
+            int[] ergebnis = Tauschen(s1, s2);
+
+            Console.WriteLine($"{ergebnis[0]} {ergebnis[1]}");
+
+
+
+
+        }
+
+        static int[] Tauschen(int s1, int s2)
+        {
+            return new int[] { s2, s1 };
+        }
+
+        static void Aufgabe15()
+        {
+            //Schreiben Sie ein Programm, das das folgende Menü darstellt: 
+            //Bitte wählen Sie die gewünschte Funktion
+            //========================================= 
+            //S -> Summe berechnen 
+            //F -> Fakultät berechnen 
+            //G -> Größten gemeinsamen Teiler berechnen 
+            //M -> Meilen berechnen 
+            //E -> Programm beenden 
+
+            //Ihre Wahl: 
+
+            //Nach der Eingabe eines Buchstabens wird eine Funktion aufgerufen, die die entsprechende
+            //Berechnung durchführt.Das Menü selbst soll auch mit Hilfe einer Funktion angezeigt
+            //werden.
+
+            Menü();
+            
+        }
+
+        static void Menü()
+        {
+            Console.WriteLine("Bitte wählen Sie die gewünschte Funktion" +
+                "\n=========================================" +
+                "\nS -> Summe berechnen " +
+                "\nF -> Fakultät berechnen " +
+                "\nG -> Größten gemeinsamen Teiler berechnen " +
+                "\nM -> Meilen berechnen" +
+                "\nE -> Programm beenden ");
+            Console.WriteLine();
+
+            string eingabe = Console.ReadLine();
+            if (eingabe.ToUpper() == "S")
+            {
+                Console.WriteLine("Geben Sie die beiden Zahlen ein");
+                int a = ReadInt();
+                int b = ReadInt();
+                Console.WriteLine($"Die Summe ist {Summe(a, b)}");
+
+            }
+
+            else if (eingabe.ToUpper() == "F")
+            {
+                Console.WriteLine("Geben Sie eine Zahl ein");
+                double z = ReadInt();
+                Console.WriteLine($"Die Fakultät lautet {Fakultät(z)}");
+
+            }
+                
+            else if (eingabe.ToUpper() == "G")
+            {
+                Console.WriteLine("Geben Sie zwei Zahlen ein");
+                int a = ReadInt();
+                int b = ReadInt();
+
+                int ergebnis = GrößterTeiler(a, b);
+                Console.WriteLine($"Der Größte gemeinsame Teiler ist {ergebnis}");
+
+            }
+                
+            else if (eingabe.ToUpper() == "M")
+            {
+                Console.WriteLine("Geben Sie die Entfernung in Km an");
+                double km = ReadDouble();
+                Console.WriteLine(Meilen(km));
+            }
+            else if (eingabe.ToUpper() == "E")
+                return;
+            else
+                Console.WriteLine("Ungültige Eingabe");
+        }
+        static int Summe(int a, int b)
+        {
+            return a + b;
+        }
+        static double Fakultät(double z)
+        {
+             int ergebnis = 1;
+            for (int i = 1; i <= z; i++)
+                //ergebnis *= i;
+                ergebnis = ergebnis * i;
+            return ergebnis;
+            
+        }
+        static int GrößterTeiler(int a, int b)
+        {
+            while (b != 0)
+            {
+                int rest = a % b;
+                a = b;
+                b = rest;
+            }
+
+            return a;
+
+        }
+
+
+
+
+
+
+
+    }
+
+
+
 
 }
 
