@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Einstieg1.strukturen</StartupObject>
+    <StartupObject>Einstieg1.Pseudocode</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -51,6 +51,7 @@
     <Compile Include="Ausgaben.cs" />
     <Compile Include="Funktionen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pseudocode.cs" />
     <Compile Include="Schleifen.cs" />
     <Compile Include="Strings.cs" />
     <Compile Include="strukturen.cs" />

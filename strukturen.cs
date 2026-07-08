@@ -12,7 +12,7 @@ namespace Einstieg1
         static void Main(string[] args)
         {
             //Aufgabe11();
-            Aufgabe12();
+            //Aufgabe12();
         }
         static void Aufgabe11()
         {
@@ -99,6 +99,19 @@ namespace Einstieg1
             Datum[] kalender = new Datum[365];
             int[] tageImMonat = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
+            /*
+             *    0         1          2
+             * 0  1.1.    1.2.       ...
+             * 1  2.1.    2.2.
+             * 2  3.1.    3.2.
+             */
+
+            Datum[,] kalender2 = new Datum[12, 31];
+            kalender2[0, 0].tag = 1;
+            kalender2[0, 0].monat = 1;
+
+            kalender2[0, 1].tag = 2;
+            kalender2[0, 1].monat = 1;
 
             int pos = 0;
 
