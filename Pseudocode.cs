@@ -16,7 +16,8 @@ namespace Einstieg1
             //Aufgabe1();
             //Aufgabe2();
             //Aufgabe3();
-            Aufgabe4();
+            //Aufgabe4();
+            Aufgabe5();
         }
 
         static void Aufgabe1()
@@ -209,6 +210,63 @@ namespace Einstieg1
 
 
         }
+
+        static void Aufgabe5()
+        {
+            //Schreiben Sie einen Pseudocode, der das Gewicht(in kg)
+            //und die Größe(in m) eines Patienten einliest.
+            //Berechnen Sie den BMI mit der Formel:
+            //BMI = Gewicht / (Größe * Größe)
+            //Wenn der BMI größer als 25 ist, geben Sie "Übergewicht"
+            //aus, ansonsten geben Sie "Normalgewicht" aus.
+
+            //Pseudocode:
+            //in main:
+            //Gewicht in (kg) und Größe in (m) eines Patienten einlesen:
+            //BMI aus eingelesene Größe und Gwicht ausrechen und ausgeben
+            //außerhalb von main:
+            //Funktion bauen:
+            //  double bmi = gewicht / (größe * größe);
+            //  WENN: (BMI > 25)
+            //  {Ausgabe: "Übergewicht"}
+            //  SONST:
+            //  Ausgabe: "Normalgewicht"
+            // return bmi;
+            //Funktion zum einlesen bauen:
+            //Gewicht und Größe einlesen mit ReadDouble();
+            //Ausführung in main:
+
+
+
+
+            Console.WriteLine("Geben Sie Ihr Gewicht in kg und Ihre Größe in m an");
+
+            var (kg, größe) = ReadDouble();
+            double bmi = BMI(kg, größe);
+            Console.WriteLine($"BMI: {bmi}");
+
+        }
+        static double BMI(double gewicht, double größe)
+        {
+            double bmi = gewicht / (größe * größe);
+
+            if (bmi > 25)
+            {
+                Console.WriteLine("Übergewicht");
+            }
+            else
+            {
+                Console.WriteLine("Normalgewicht");
+            }
+            return bmi;
+        }
+        static (double kg, double größe) ReadDouble()
+        {
+            double kg = double.Parse(Console.ReadLine());
+            double größe = double.Parse(Console.ReadLine());
+            return (kg, größe);
+        }
+
 
 
     }
