@@ -138,7 +138,7 @@ namespace Einstieg1
             int alter = int.Parse(Console.ReadLine());
 
 
-            if(alter < 18)
+            if (alter < 18)
             {
                 Console.WriteLine("Grundbeitrag angeben");
                 int Grundbeitrag = int.Parse(Console.ReadLine());
@@ -166,53 +166,52 @@ namespace Einstieg1
             //Pseudocode:
             //Prüfen ob alle Spieler im Array alterSpieler unter 18 sind
             //Variable boolean einfügen
-            //boolean Gültig = false;
+            //boolean Gültig = true
             //for-schleife: geh das Array alterSpieler durch von i = 0 bis Array.Length i++
-            //WENN: (alterSpieler[i] < 18)
+            //WENN: (alterSpieler[i] >= 18)
             // {    
             //      
-            //      Ausgabe: ("Die Aufstellung ist Gültig")    
+            //      Gültig = false;
+            //      break;
             // }
-            //SONST: Ausgabe: ("Die Aufstellung ist nicht Gültig")
-            //
-            // 
+            //WENN Gültig:
+            //Ausgabe: Die Aufstellung ist Gültig
+            //SONST:
+            //Ausgabe: Die Aufstellung ist Ungültig
+
+
+
+            int[] Stamm11 = new int[11];
+            Random zufall = new Random();
+            for (int i = 0; i < Stamm11.Length; i++)
+                Stamm11[i] = zufall.Next(1, 19);
+
+            bool Gültig = true;
+
+            for (int i = 0; i < Stamm11.Length; i++)
+            {
+                if (Stamm11[i] >= 18)
+                {
+                    Gültig = false;
+                    break;
+                }
+            }
+            if (Gültig)
+            {
+                Console.WriteLine("Stamm 11 Gültig");
+            }
+            else
+                Console.WriteLine("Stamm11 Ungültig");
 
 
 
 
-        //    bool Gültig = false;
-        //    int[] alterSpieler = new int[11];
-        //    for (int i = 0; i <= alterSpieler.Length; i++)
-        //    {
-        //        Random zufall = new Random();
-        //        alterSpieler[i] = zufall.Next(10,20);
-        //    }
-        //    for (int i = 0;i <= alterSpieler.Length; i++)
-        //    {
-        //        if (alterSpieler[i] < 18)
-        //        {
-        //            Console.WriteLine("Die Aufstellung ist Gültig");
-                    
-        //        }
-        //        else
-        //        {
-        //            Console.WriteLine("Die Aufstellung ist Ungültig");
-        //        }
-
-        //    }
 
 
-        //}
-
-
-
-
-
+        }
 
 
     }
-        
-
-}   
+}
 
 
