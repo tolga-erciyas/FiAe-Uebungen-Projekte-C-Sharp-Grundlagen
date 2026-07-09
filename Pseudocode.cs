@@ -17,7 +17,9 @@ namespace Einstieg1
             //Aufgabe2();
             //Aufgabe3();
             //Aufgabe4();
-            Aufgabe5();
+            //Aufgabe5();
+            //Aufgabe6();
+            Aufgabe7();
         }
 
         static void Aufgabe1()
@@ -267,9 +269,121 @@ namespace Einstieg1
             return (kg, größe);
         }
 
+        static void Aufgabe6()
+        {
+            //Gegeben ist ein Array freieTermine mit der Dauer der
+            //freien Terminslots in Minuten(z.B. [15, 30, 10, 45]).
+            //Ein Patient benötigt einen Termin von 37 Minuten.
+            //Schreiben Sie einen Pseudocode, der den ersten Slot
+            //findet, der groß genug ist.
+            //Geben Sie den Index des Slots aus.Wenn kein passender
+            //Slot gefunden wird, geben Sie "-1" aus.
+
+
+            //Pseudocode:
+
+            //Ausgabe:"Wie viele min werden für patient x benötigt?"
+            //min einlesen
+            //variable x erstellen wo die eingabe in min gespeichert wird 
+            //for-schleife für das Array freieTermine
+            //gehe das array durch und gucke jeden freien slot an
+            //while-schleife: wiederhole solange terminslot kleiner als x 
+            //{
+            //  ausgabe: freieTermine[i] = "-1"
+            //}
+            //WENN: terminslot >= x - diesen terminslot merken
+            //{
+            //  ausgabe: ($"{freieTermine[i]} der Terminslots kann gebucht werden");
+            //}
+            //ENDE:
+
+            int[] freieTermine = new int[10];
+            Random zufall = new Random();
+            for (int i = 0; i < freieTermine.Length; i++)
+            {
+                freieTermine[i] = zufall.Next(15, 100);
+            }
+            Console.Write("Wie viele Min werden für Patient x benötigt? ");
+            int min = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+            Console.WriteLine("Terminslots:");
+            Console.WriteLine();
+
+            for (int i = 0; i <= freieTermine.Length; i++)
+            {
+                
+                while (freieTermine[i] < min)
+                {
+                    Console.WriteLine("-1");
+                    i++;
+                }
+                if (freieTermine[i] >= min)
+                {
+                    Console.WriteLine($"{freieTermine[i]}min: der Terminslot kann gebucht werden");
+                    break;
+                }
+
+
+
+            }
+
+
+        }
+        static void Aufgabe7()
+        {
+            //Gegeben sind zwei Arrays gleicher Länge:
+            //kostenProStueck und anzahlVerwendet.
+            //Schreiben Sie einen Pseudocode, der die Gesamtkosten
+            //der Baugruppe berechnet.
+            //Wenn die Gesamtkosten 1000 Euro übersteigen, wird ein
+            //Mengenrabatt von 5 % auf die Gesamtkosten gewährt.
+            //Geben Sie die «nalen Kosten aus.
+
+            //Pseudocode:
+            //kostenProStueck[...], anzahlVerwendet[...]
+            // variable Summer erstellen und = 0 setzen
+            //for-schleife gehe kosten[] durch nehme jede zahl aus dem index:
+            //Rechnung der Gesamtkosten: summe = summe +  kosten[i] x anzahl[i]
+            //WENN: Gesamtkosten größer 1000 kommt ein Rabatt von 5% darauf.
+            //Ausgabe: alle gesamtkosten ausgeben und wenn vorhanden den rabatt
+
+            double[] kosten = new double[]{ 19.99, 24.55, 50, 100, 199.99 };
+            double[] anzahl = new double[] { 10, 20, 50, 100, 200 };
+
+            double summe = 0;
+            double postenWert = 0.0;
+
+            for (int i = 0; i < kosten.Length; i++)
+                //{
+                //    postenWert = kosten[i] * anzahl[i];
+                //    if (postenWert > 1000)
+                //    {
+                //        postenWert *= 0.95;
+                //        Console.WriteLine($" {postenWert} Mit Rabatt");
+                //    }
+                summe += kosten[i] * anzahl[i];
+            //}
+
+            if (summe >= 1000)
+            {
+                double MitRabatt = summe * 0.95;
+                Console.WriteLine($"{MitRabatt} Mit Rabatt");
+            }
+            else
+                Console.WriteLine(summe);
+            
+           
+
+
+
+        }
 
 
     }
-}
+}   
+
+
+
+
 
 
