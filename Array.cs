@@ -24,7 +24,9 @@ namespace Einstieg1
             //Aufgabe41();
             //Aufgabe42();
             //Aufgabe51();
-           
+            KinossalAufgabe();
+
+
         }
 
         static void Aufgabe11()
@@ -393,6 +395,45 @@ namespace Einstieg1
                 Console.WriteLine($"Die Zahl {i} kommt {Array2[i]} mal vor");
             }
 
+        }
+
+        static void KinossalAufgabe()
+        {
+            /*Aufgabe:
+             * Sie sollen einem Kinobetreiber dabei helfen seine Säle udn Sitzplätze
+             * darin zu verwalten. Ein Kinosaal kann wie folgt beschrieben werden
+             * 
+             * 8    8   8   8   8   8   8   8   8   8
+             * 8    8   8   10  10  10  8   8   8   8
+             * 10   10  10  10  10  10  10  10  10  10
+             * 
+             * Kunden wollen für eine Vorstellung in einem Saal buchen. Dabei können
+             * Plätze zwei Zahlen(Reihe und Sitznummer in der Reihe) oder die Wahl
+             * der Preiskategorie an, dann bekommt er den ersten freien PLatz in der
+             * Kategorie an, dann bekommt er den ersten freien PLatz in der Kategorie
+             * oder einem Meldung des Bedauerns, wenn kein Platz frei ist.
+             * 
+             * Ihr Programm soll folgendes leisten:
+             * 
+             * 1. Die obige Belegung des Kinosaals erzeugen
+             * 
+             * 2. An der Konsole abfragen, ob man über die Platznummer oder über die 
+             * Kategorie wählen will oder die Eingabe beenden möchte.
+             * 
+             * 3. Die Eingabe des Platzes abwarten und dann eine Rückmeldung über
+             * den Erfolg oder Misserfolg der Buchung ausgeben.
+             * 
+             * 4. Ausgeben wie viele Plätze noch frei sind, zurück zum Punkz 2
+             * 
+             * 5. Ausgabe der Summe, die über die verkauften Plätze eingenommen wurde.*/
+
+            /*Pseudocode:
+             * 
+             * 
+             * 
+             * 
+             */
+            
         }
 
         

@@ -21,7 +21,7 @@ namespace Einstieg1
             //Aufgabe6();
             //Aufgabe7();
             //Aufgabe8();
-            Aufgabe9();
+            //Aufgabe9();
         }
 
         static void Aufgabe1()
