@@ -19,7 +19,9 @@ namespace Einstieg1
             //Aufgabe4();
             //Aufgabe5();
             //Aufgabe6();
-            Aufgabe7();
+            //Aufgabe7();
+            //Aufgabe8();
+            Aufgabe9();
         }
 
         static void Aufgabe1()
@@ -351,20 +353,12 @@ namespace Einstieg1
             double[] anzahl = new double[] { 10, 20, 50, 100, 200 };
 
             double summe = 0;
-            double postenWert = 0.0;
-
+         
             for (int i = 0; i < kosten.Length; i++)
-                //{
-                //    postenWert = kosten[i] * anzahl[i];
-                //    if (postenWert > 1000)
-                //    {
-                //        postenWert *= 0.95;
-                //        Console.WriteLine($" {postenWert} Mit Rabatt");
-                //    }
-                summe += kosten[i] * anzahl[i];
-            //}
 
-            if (summe >= 1000)
+                summe += kosten[i] * anzahl[i];
+                
+            if (summe > 1000)
             {
                 double MitRabatt = summe * 0.95;
                 Console.WriteLine($"{MitRabatt} Mit Rabatt");
@@ -377,6 +371,87 @@ namespace Einstieg1
 
 
         }
+        static void Aufgabe8()
+        {
+            //Schreiben Sie einen Pseudocode, der eine bestimmte
+            //anzahlEier gleichmäßig auf eine anzahlKinder verteilt.
+            //Geben Sie aus, wie viele Eier jedes Kind bekommt und wie
+            //viele Eier als Rest übrig bleiben.
+            //Hinweis: Denken Sie an die Operatoren für
+            //Ganzzahldivision und Modulo.
+
+            //Pseudocode:
+
+            //eingabe: anzahl der Kinder
+            //eingabe: anzahl der eier 
+            //variable int Kinder erstellen
+            //variable int Eier erstellen 
+            //Rechnung:Eier =  Eier / Kinder
+            //Variable Rest und berechnen Eier % Kinder 
+            //Ausgabe: Jedes Kind bekommt x Eier und x bleiben übrig 
+            //
+
+
+            Console.WriteLine("Anzahl Kinder eingeben");
+            int Kinder = int.Parse(Console.ReadLine());
+            Console.WriteLine("Anzahl eier eingeben");
+            int Eier = int.Parse(Console.ReadLine());
+
+            int EierProKind = Eier / Kinder ;
+            int Rest = Eier % Kinder ;
+            
+
+            Console.WriteLine($"Jedes Kind bekommt {EierProKind} Eier und {Rest} bleiben übrig");
+
+
+
+
+
+        }
+        static void Aufgabe9()
+        {
+            //Gegeben ist ein Array gefundeneEier, das speichert, wie
+            //viele Eier jedes Kind gefunden hat.
+            //Schreiben Sie einen Pseudocode, der das Maximum in
+            //diesem Array findet.
+            //Geben Sie am Ende aus: "Gewinner hat X Eier gefunden",
+            //wobei X das gefundene Maximum ist.
+
+            //Pseudocode:
+            //Gegeben Array gefundeneEier[] {1..2..3..4..5}
+            //Variable GrößteZahl erstellen und auf 0 setzen;
+            //For-Schleife: Für Array gefundeneEier 
+            //Gehe durch das Array und prüfe ob gefundeneEier[i] > Größte
+            //WENN: gefundeneEier[i] > Größte
+            //DANN: Größte = gefundeneEier[i]
+            //Ausgabe: Gewinner hat {Größte} Eier gefunden.
+
+            int[] gefundeneEier = new int[10];
+            Random zufall = new Random();
+            for(int i = 0;i < gefundeneEier.Length;i++)
+            gefundeneEier[i] = zufall.Next(1, 21);
+
+            int Größte = 0;
+            for(int i = 0; i < gefundeneEier.Length; i++)
+            {
+                if(gefundeneEier[i] > Größte )
+                {
+                    Größte = gefundeneEier[i];
+                }
+                
+                Console.WriteLine($"Kind {i+1}: {gefundeneEier[i]} Eier");
+
+            }
+            Console.WriteLine();
+            Console.WriteLine($"Gewinner hat {Größte} Eier gefunden");
+
+
+
+        }
+
+
+
+
 
 
     }
