@@ -10,9 +10,14 @@ Der Fokus liegt auf sauberer Problemzerlegung: erst Pseudocode, dann Umsetzung.
 * Schleifen (for, while, verschachtelt)
 * Arrays & Algorithmen
 * Methoden / Funktionen (Parameter & Rückgabewerte)
+* Klassen & Objekte (OOP)
 * Konsolenanwendungen
 
 ## Ausgewählte Arbeiten
+
+* **OOP & Klassen** – [`sparschwein.cs`](sparschwein.cs):
+  Klasse `PiggyBank` mit Kapselung (private Attribute),
+  Konstruktor, Überlaufprüfung beim Einwerfen und Rückgabewerten.
 * **Arrays & Algorithmen** – [`Array.cs`](Array.cs): u. a. sequentielle Suche,
   Häufigkeitszählung, Wechselgeld per Greedy-Verfahren, Lotto „6 aus 49“
   mit verschachtelten Schleifen.
