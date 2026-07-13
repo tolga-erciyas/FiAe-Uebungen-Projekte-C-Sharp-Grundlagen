@@ -56,8 +56,13 @@ namespace Einstieg1
              * + BreakInto(): int */
 
             Piggybank p = new Piggybank(100);
-            int übrig = p.Add100Cents(250);
-            Console.WriteLine($"so viel Cents übrig {übrig}");
+            int übrig = p.Add100Cents(5);
+            Console.WriteLine($"so viel Cents zu viel: {übrig}");
+
+            Console.WriteLine(p.Shake());
+
+            Console.WriteLine($"Betrag: {p.BreakInto()} Cent");
+
 
         }
         class Piggybank
