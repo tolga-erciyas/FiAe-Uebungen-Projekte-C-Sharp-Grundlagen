@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Einstieg1.Sparschwein</StartupObject>
+    <StartupObject>Einstieg1.Filiale_</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Array.cs" />
     <Compile Include="Ausgaben.cs" />
+    <Compile Include="Filiale_.cs" />
     <Compile Include="Funktionen.cs" />
     <Compile Include="Klassen und Objekte.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
