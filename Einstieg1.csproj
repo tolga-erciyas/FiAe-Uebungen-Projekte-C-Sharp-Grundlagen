@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Einstieg1.Filiale_</StartupObject>
+    <StartupObject>Einstieg1.OOP.Gehälter_berechnen</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -49,13 +49,15 @@
   <ItemGroup>
     <Compile Include="Array.cs" />
     <Compile Include="Ausgaben.cs" />
-    <Compile Include="Filiale_.cs" />
+    <Compile Include="Retrieval_Übung.cs" />
+    <Compile Include="OOP\Filiale_.cs" />
     <Compile Include="Funktionen.cs" />
     <Compile Include="Klassen und Objekte.cs" />
+    <Compile Include="OOP\Gehälter berechnen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pseudocode.cs" />
     <Compile Include="Schleifen.cs" />
-    <Compile Include="Sparschwein.cs" />
+    <Compile Include="OOP\Sparschwein.cs" />
     <Compile Include="Strings.cs" />
     <Compile Include="strukturen.cs" />
     <Compile Include="Verzweigung.cs" />
