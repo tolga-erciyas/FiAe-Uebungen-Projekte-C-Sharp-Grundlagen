@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Einstieg1.OOP.Gehälter_berechnen</StartupObject>
+    <StartupObject>Einstieg1.Retrieval_Übung</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -49,6 +49,8 @@
   <ItemGroup>
     <Compile Include="Array.cs" />
     <Compile Include="Ausgaben.cs" />
+    <Compile Include="OOP\Datenkapselung.cs" />
+    <Compile Include="OOP\RADIO.cs" />
     <Compile Include="Retrieval_Übung.cs" />
     <Compile Include="OOP\Filiale_.cs" />
     <Compile Include="Funktionen.cs" />

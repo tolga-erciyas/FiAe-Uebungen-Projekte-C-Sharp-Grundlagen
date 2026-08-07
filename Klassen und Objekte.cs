@@ -28,17 +28,41 @@ namespace Einstieg1
             meinPorsche.Farbe = "Schwarz";
             meinPorsche.Performance = "Stage 1";
 
+            Sportwagen meinFerrari = meinPorsche;
+            Sportwagen meinlamborghini = meinKiaPicanto as Sportwagen;
+            Auto meinFord = meinPorsche as Auto;
+            Auto meinOpel = new Sportwagen();
+            
 
+            Auto meinSuzuki = new Auto();
+            Auto meinTrabi = meinSuzuki;
+            Auto meinBenz = meinTrabi;
+
+            meinBenz = null;
+
+            if(meinSuzuki == null)
+                Console.WriteLine("meinSuzuki ist null");
+            else
+                Console.WriteLine("meinSuzuki ist nicht null");
 
 
             //meinKiaPicanto.steckbrief();
-            //meinVW.steckbrief();
-            meinPorsche.steckbrief();
+            //Console.WriteLine();
+
+            //meinlamborghini.steckbrief();
+            //meinFord.steckbrief();
+
+            //Console.WriteLine();
+            //meinFerrari.steckbrief();
+
+            //Console.WriteLine();
+            //meinPorsche.steckbrief();
+
 
         }
     }
 
-    class Auto
+    class Auto 
     {
         public string Marke { get; set; }
         public string Modell { get; set; }
@@ -57,10 +81,6 @@ namespace Einstieg1
         }
 
   
-    
-    
-    
-   
     
     }
     class Sportwagen : Auto
