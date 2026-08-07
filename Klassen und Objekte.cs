@@ -29,7 +29,7 @@ namespace Einstieg1
             meinPorsche.Performance = "Stage 1";
 
             Sportwagen meinFerrari = meinPorsche;
-            Sportwagen meinlamborghini = meinKiaPicanto as Sportwagen;
+            Sportwagen meinlamborghini = meinKiaPicanto as Sportwagen; // <- geht nicht weil nicht jedes auto ein sportwagen ist, umgekehrt geht wegen vererbung
             Auto meinFord = meinPorsche as Auto;
             Auto meinOpel = new Sportwagen();
             
