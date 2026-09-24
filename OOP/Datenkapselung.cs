@@ -53,11 +53,11 @@ namespace Einstieg1.OOP
              * + SetFarbe(farbe: string): void
              */
 
-            /*Socke meineSocke = new Socke();
-            meineSocke.SetFarbe("Rot");
-            meineSocke.Wasche();
-            meineSocke.Trockne();
-            meineSocke.Ausgabe();*/
+            //Socke meineSocke = new Socke();
+            //meineSocke.SetFarbe("Rot");
+            //meineSocke.Wasche();
+            //meineSocke.Trockne();
+            //meineSocke.Ausgabe();
 
             /*Socke meineneuesocke = new Socke();
              meineneuesocke.Trocken = true; <- geht nicht wegen private einstellung
@@ -92,11 +92,7 @@ namespace Einstieg1.OOP
             Mensch sasuke = new Mensch("Uchiha Sasuke", 33);
             sasuke.vorstellen();
             sasuke.Geburtstag();*/
-
             //----------------------------------------------------------------------------
-
-
-
         }
     }
 }
@@ -119,7 +115,6 @@ class Socke
     {
         string trockenStatus = Trocken ? "trocken" : "nicht trocken";
         string sauberStatus = Sauber ? "sauber" : "nicht sauber";
-
         Console.WriteLine($"Die Socke mit der Farbe {Farbe} ist {sauberStatus} und {trockenStatus}.");
     }
     public void SetFarbe(string farbe)
@@ -132,7 +127,7 @@ class Mensch
     string Name;
     int Alter;
 
-    public Mensch(string name, int alter)   // ← der Konstruktor
+    public Mensch(string name, int alter)   // <- der Konstruktor
     {
         Name = name;
         Alter = alter;

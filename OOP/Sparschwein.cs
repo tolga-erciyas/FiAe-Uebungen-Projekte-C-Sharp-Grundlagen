@@ -55,7 +55,7 @@ namespace Einstieg1
              * + isBroken(): bool
              * + BreakInto(): int */
 
-            Piggybank p = new Piggybank(100);
+            Piggybank p = new Piggybank(200);
             int übrig = p.Add100Cents(120);
             Console.WriteLine($"so viele Münzen zu viel: {übrig}");
 
@@ -90,7 +90,7 @@ namespace Einstieg1
                 int freierplatz = maximaleAnzahl - inhalt;
                 if (anzahl <= freierplatz) // 5 münzen platz(if anzahl <= 5 münzen)
                 {
-                    anzahl1cents = anzahl1cents + anzahl; // alles passt → alle rein
+                    anzahl1cents = anzahl1cents + anzahl; // alles passt -> alle rein
                     return 0;
                 }
                 else

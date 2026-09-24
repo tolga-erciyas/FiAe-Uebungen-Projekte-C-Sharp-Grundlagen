@@ -22,18 +22,13 @@ namespace Einstieg1
             //Aufgabe14();
             //Aufgabe15();
 
-
-        }
-
-        static void Aufgabe1()
-        {
-            //Erstellen Sie ein kleines Programm, welches vom Anwender zwei ganze Zahlen abfragt und dann 
-            //ermittelt, welche der beiden Zahlen die größere Zahl ist und welche die kleinere Zahl ist. 
-            //Erstellen Sie dazu in Ihrem Programm zunächst zwei Funktionen mit den Namen Min und Max:
-            //Verwenden Sie diese Funktionen, um festzustellen welche der beiden Zahlen die größere bzw. die
-            //kleinere Zahl ist. 
-
-
+            /*Aufgabe1:
+            Erstellen Sie ein kleines Programm, welches vom Anwender zwei ganze Zahlen abfragt und dann 
+            ermittelt, welche der beiden Zahlen die größere Zahl ist und welche die kleinere Zahl ist. 
+            Erstellen Sie dazu in Ihrem Programm zunächst zwei Funktionen mit den Namen Min und Max:
+            Verwenden Sie diese Funktionen, um festzustellen welche der beiden Zahlen die größere bzw. die
+            kleinere Zahl ist.*/
+            
             Console.WriteLine("Gebe 2 Zahlen ein:");
             int a = ReadInt();
             int b = ReadInt();
@@ -44,8 +39,33 @@ namespace Einstieg1
             Console.WriteLine("Min: " + kleinere);
             Console.WriteLine("Max: " + größere);
 
-            Console.ReadLine(); // damit das Fenster offen bleibt
+            Console.ReadLine();
+
+
+            int[] meinArray = new int[10];
+            Random zufall = new Random();
+            for( int i = 0; i < meinArray.Length; i++)
+            {
+                meinArray[i] = zufall.Next(1, 21);
+                //Console.Write(meinArray[i] + " ");
+            }
+            PrintArray(meinArray);
+            Console.WriteLine();
+            int kleinste = FindMin(meinArray);
+            Console.WriteLine($"Die kleinste Zahl im Array ist {kleinste}");
+            int größte = FindMax(meinArray);
+            Console.WriteLine($"Die Größte Zahl im Array ist {größte}");
+
         }
+
+
+        
+        
+
+
+
+
+        
 
         static int Min(int a, int b)
         {
@@ -115,27 +135,28 @@ namespace Einstieg1
             return meilen;
         }
 
-        static void Aufgabe11()
-        {
-            //Schreiben Sie ein Programm mit einer Funktion „Hallo()“. Diese Funktion soll auf der Konsole „Hallo 
-            //Welt“ ausgeben.Die Funktion hat keine Übergabeparameter und keinen Rückgabewert. Rufen Sie
-            //aus dem „Hauptprogramm“ diese Methode auf.
 
-            //Pseudocode:
 
-            //1. in Main: ich brauche eine Funktion ohne Rückgabewert
-            //2.Funktion erstellen - static void Hallo()
-            //. { Console.WriteLine("Hallo Welt") }
-            //3. In Main aufrufen: Hallo();
-            Hallo("Tolga");
+        //Schreiben Sie ein Programm mit einer Funktion „Hallo()“. Diese Funktion soll auf der Konsole „Hallo 
+        //Welt“ ausgeben.Die Funktion hat keine Übergabeparameter und keinen Rückgabewert. Rufen Sie
+        //aus dem „Hauptprogramm“ diese Methode auf.
 
-        }
+        //Pseudocode:
 
-        static void Hallo( string name)
+        //1. in Main: ich brauche eine Funktion ohne Rückgabewert
+        //2.Funktion erstellen - static void Hallo()
+        //. { Console.WriteLine("Hallo Welt") }
+        //3. In Main aufrufen: Hallo();
+
+        static void Hallo(string name)
         {
 
             Console.WriteLine($"Hallo! {name}");
         }
+
+
+
+
 
         static void Aufgabe13()
         {
@@ -283,6 +304,63 @@ namespace Einstieg1
             return a;
 
         }
+        /*Erstellen Sie ein Programm, welches vom Anwender erfragt wie viele Zahlen er angeben möchte(1 
+        bis 20). Dann werden die Zahlen in ein Feld passender Größe eingelesen und Ihr Programm ermittelt
+        die kleinste und größte eingegebene Zahl.
+        Ihr Programm muss (außer der Main-Methode) mindestens die folgenden Methoden aufweisen: 
+
+        1. Eine Methode int[] ReadInArray(int NumOfElements) 
+        2. Eine Methode int   FindMin(int[] SearchArray) 
+        3. Eine Methode int FindMax(int[] SearchArray)*/
+
+        static int[] ReadInArray(int NumOfElements)
+        {
+            Console.WriteLine("Wie viele Zahlen wollen Sie eingeben?");
+            NumOfElements = int.Parse(Console.ReadLine());
+            int[] Elements = new int[NumOfElements];
+            return Elements;
+            
+        }
+        static int FindMin(int[] SearchArray)
+        {
+            int kleinsteZahl = SearchArray[0];
+            for(int i = 0; i < SearchArray.Length; i++)
+            {
+                if (SearchArray[i] < kleinsteZahl)
+                {
+                    kleinsteZahl = SearchArray[i];
+                }
+            }
+            return kleinsteZahl;
+        }
+        static int FindMax(int[] SearchArray)
+        {
+            int GrößteZahl = 1;
+            for (int i = 0; i < SearchArray.Length; i++)
+            {
+                if (SearchArray[i] > GrößteZahl)
+                {
+                    GrößteZahl = SearchArray[i];
+                }
+            }
+            return GrößteZahl;
+        }
+
+        static void PrintArray(int[] SearchArray)
+        {
+            foreach (int zahl in SearchArray)
+            {
+                Console.Write(zahl + " ");
+            }
+            Console.WriteLine();
+        }
+
+
+
+
+
+
+
 
 
 

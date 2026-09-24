@@ -86,29 +86,93 @@ namespace Einstieg1.OOP
 
             // 1. Angestellter: Alle Daten direkt im Konstruktor übergeben!
             // (Keine 5 Zeilen Zuweisung mehr nötig)
-            Angestellter Sano = new Angestellter();
-            Sano.name = "Sano";
-            Sano.vorname = "Manjiro";
-            Sano.Alter = 25;
-            Sano.Tarifgruppe = "A";
-            double GehaltSano = Sano.BerechneGehalt(); // Nutzt jetzt die Daten aus dem Objekt
-            Console.WriteLine(Sano.vorname + " " + Sano.name + " " + GehaltSano + " Euro");
+            //Angestellter Sano = new Angestellter();
+            //Sano.name = "Sano";
+            //Sano.vorname = "Manjiro";
+            //Sano.Alter = 25;
+            //Sano.Tarifgruppe = "A";
+            //double GehaltSano = Sano.BerechneGehalt(); // Nutzt jetzt die Daten aus dem Objekt
+            //Console.WriteLine(Sano.vorname + " " + Sano.name + " " + GehaltSano + " Euro");
 
 
-            ExterneMitarbeiter Itachi = new ExterneMitarbeiter();
-            Itachi.name = "Uchiha";
-            Itachi.vorname = "Itachi";
-            Itachi.projektstd = 50;
-            double ItachiGehalt = Itachi.GehaltExtern();
-            Console.WriteLine(Itachi.vorname + " " + Itachi.name + " " +  ItachiGehalt + " Euro");
+            //ExterneMitarbeiter Itachi = new ExterneMitarbeiter();
+            //Itachi.name = "Uchiha";
+            //Itachi.vorname = "Itachi";
+            //Itachi.projektstd = 50;
+            //double ItachiGehalt = Itachi.GehaltExtern();
+            //Console.WriteLine(Itachi.vorname + " " + Itachi.name + " " +  ItachiGehalt + " Euro");
 
 
-            Praktikant Sasuke = new Praktikant();
-            Sasuke.name = "Uchiha";
-            Sasuke.vorname = "Sasuke";
-            Sasuke.Abteilung = "Entwicklung";
-            double SasukeGehalt = Sasuke.GehaltPraktikant();
-            Console.WriteLine(Sasuke.vorname + " " +  Sasuke.name + " " + SasukeGehalt + " Euro ");
+            //Praktikant Sasuke = new Praktikant();
+            //Sasuke.name = "Uchiha";
+            //Sasuke.vorname = "Sasuke";
+            //Sasuke.Abteilung = "Entwicklung";
+            //double SasukeGehalt = Sasuke.GehaltPraktikant();
+            //Console.WriteLine(Sasuke.vorname + " " +  Sasuke.name + " " + SasukeGehalt + " Euro ");
+            Console.WriteLine("=== Gehaltsberechnung ===");
+            Console.WriteLine("Welcher Mitarbeitertyp? (1=Angestellter, 2=Extern, 3=Praktikant)");
+            string auswahl = Console.ReadLine();
+
+            switch (auswahl)
+            {
+                case "1":
+                    Angestellter mitarbeiter = new Angestellter();
+
+                    Console.WriteLine("Name:");
+                    mitarbeiter.name = Console.ReadLine();
+
+                    Console.WriteLine("Vorname:");
+                    mitarbeiter.vorname = Console.ReadLine();
+
+                    Console.WriteLine("Alter:");
+                    mitarbeiter.Alter = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Tarifgruppe (A/B/C/D):");
+                    mitarbeiter.Tarifgruppe = Console.ReadLine();
+
+                    double gehalt = mitarbeiter.BerechneGehalt();
+                    Console.WriteLine($"{mitarbeiter.vorname} {mitarbeiter.name}: {gehalt} Euro");
+                    break;
+
+                case "2":
+                    ExterneMitarbeiter _extern = new ExterneMitarbeiter();
+
+                    Console.WriteLine("Name:");
+                    _extern.name = Console.ReadLine();
+
+                    Console.WriteLine("Vorname:");
+                    _extern.vorname = Console.ReadLine();
+
+                    Console.WriteLine("Projektstunden:");
+                    _extern.projektstd = int.Parse(Console.ReadLine());
+
+                    double gehaltExtern = _extern.GehaltExtern();
+                    Console.WriteLine($"{_extern.vorname} {_extern.name}: {gehaltExtern} Euro");
+                    break;
+
+                case "3":
+                    Praktikant prakti = new Praktikant();
+
+                    Console.WriteLine("Name:");
+                    prakti.name = Console.ReadLine();
+
+                    Console.WriteLine("Vorname:");
+                    prakti.vorname = Console.ReadLine();
+
+                    Console.WriteLine("Abteilung (Entwicklung/Vertrieb/Produktion):");
+                    prakti.Abteilung = Console.ReadLine();
+
+                    double gehaltPrakti = prakti.GehaltPraktikant();
+                    Console.WriteLine($"{prakti.vorname} {prakti.name}: {gehaltPrakti} Euro");
+                    break;
+
+                default:
+                    Console.WriteLine("Ungültige Auswahl.");
+                    break;
+            }
+
+            Console.WriteLine("\nDrücken Sie eine beliebige Taste zum Beenden...");
+            Console.ReadKey();
         }
     }
     class Mitarbeiter

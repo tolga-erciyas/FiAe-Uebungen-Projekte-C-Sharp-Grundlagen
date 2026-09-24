@@ -4,6 +4,7 @@ using System.Data.Common;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
@@ -25,7 +26,11 @@ namespace Einstieg1
             //Aufgabe42();
             //Aufgabe51();
             KinossalAufgabe();
-
+            //Aufgabe1();
+            //Aufgabe2();
+            //Aufgabe3();
+            //PasswortGenerator();
+            //BubbleSort();
 
         }
 
@@ -198,33 +203,6 @@ namespace Einstieg1
             //an und vergleichen es mit dem gesuchten Wert. Falls es nicht das gesuchte Element ist, gehen Sie
             //zum nächsten Array - Element usw.
 
-            // ===== PSEUDOCODE: Sequentielle Suche im Array =====
-
-            //Ausgabe: "Gib eine Zahl von 0 bis 50.000 ein"
-            //lies die Eingabe und wandle sie in eine ganze Zahl um  → eingabe
-
-            // --- Zuerst die Eingabe prüfen, BEVOR irgendetwas gebaut wird ---
-            //WENN(eingabe < 0 ODER eingabe > 50000):
-            //    Ausgabe: "Ungültige Eingabe"
-
-            //SONST:
-            // --- Vorbereitung ---
-            //erstelle ein Array mit 100.000 Plätzen          → Array1
-            //erstelle einen Zufallsgenerator                  → zufallszahl
-            //erstelle einen Merker, anfangs falsch            → gefunden = false
-
-            // --- Array befüllen UND gleichzeitig suchen ---
-            //WIEDERHOLE für jede Position i von 0 bis 99.999:
-            //lege eine Zufallszahl(0 bis 50.000) auf Position i   → Array1[i]
-            //WENN(Array1[i] gleich eingabe):
-            //setze gefunden = true
-
-            // --- Nach der Schleife: einmal Bilanz ziehen ---
-            //WENN(gefunden ist wahr):
-            //Ausgabe: "Ja, die Zahl ist im Array"
-            //SONST:
-            //Ausgabe: "Nein, die Zahl ist nicht im Array"
-
             Console.WriteLine("Gib eine Zahl von 0 - 50.000 ein");
             int eingabe = int.Parse(Console.ReadLine());
 
@@ -241,13 +219,11 @@ namespace Einstieg1
                 for (int i = 0; i < 100000; i++)
                 {
                     Array1[i] = zufallszahl.Next(0, 50001);
-                    if (Array1[i] == eingabe)     // erstes if: IN der Schleife, läuft 100.000x
+                    if (Array1[i] == eingabe)     
                         gefunden = true;
-
                 }
-                if (gefunden)                     // zweites if: NACH der Schleife, läuft 1x
+                if (gefunden)                     
                     Console.WriteLine("Ja, Die Zahl ist im Array");
-
                 else
                     Console.WriteLine("Nein, Die Zahl ist nicht im Array");
             }
@@ -327,36 +303,39 @@ namespace Einstieg1
             //4.for-schleife : eine Zufallszahl (1–49) ziehen und in neuezahl speichern
             //5.den Merker schonVorhanden auf false setzen
             //6.mit dem Finger durchs Array gehen und jede gespeicherte Zahl mit neuezahl vergleichen
-            //7.wenn beim Vergleich eine gleich ist → schonVorhanden auf true setzen
-            //8.wenn schonVorhanden true war → nichts einfügen, neue Zahl ziehen (wiederholen)
-            //9.wenn schonVorhanden am Ende false ist → neuezahl ins Array einfügen
+            //7.wenn beim Vergleich eine gleich ist -> schonVorhanden auf true setzen
+            //8.wenn schonVorhanden true war -> nichts einfügen, neue Zahl ziehen (wiederholen)
+            //9.wenn schonVorhanden am Ende false ist -> neuezahl ins Array einfügen
 
-            Console.WriteLine("Tipps:"); // 1.
-            int[] lotto = new int[6]; // 2.
-            Random zufallszahlen = new Random(); // 3.
-
+            Console.WriteLine("Tipps:"); 
+            int[] lotto = new int[6];
+            int neuezahl = 0;
+            Random zufallszahlen = new Random();
+            
+            Console.WriteLine();
 
             for (int i = 0; i < lotto.Length; i++)
             {
-                int neuezahl = 0;
                 bool schonvorhanden = true;
+
 
                 while (schonvorhanden)
                 {
-                    neuezahl = zufallszahlen.Next(1, 50); //4.
-                    schonvorhanden = false;  // 5.
-                    for (int j = 0; j < lotto.Length; j++) // 6.
+                    neuezahl = zufallszahlen.Next(1, 50); 
+                    schonvorhanden = false;  
+                    for (int j = 0; j < lotto.Length; j++) 
                     {
                         if (lotto[j] == neuezahl)
-                            schonvorhanden = true; //7.
+                            schonvorhanden = true; 
                     }
                 }
                 lotto[i] = neuezahl;
             }
             foreach (int zahl in lotto)
             {
-                Console.WriteLine(zahl);
+                Console.Write(zahl + " ");
             }
+            Console.WriteLine();
 
         }
 
@@ -433,8 +412,323 @@ namespace Einstieg1
              * 
              * 
              */
-            
+
+            Console.WriteLine("Willkommen bei MyKino :)\n_______________________\n  Menü:\n        1.Platz buchen\n        2.Preiskategorie buchen\n        3.Beenden");
+            Console.WriteLine();
+            int eingabe = int.Parse(Console.ReadLine());
+            string eingabe_kategorie;
+            bool gebucht = false;
+            bool weiter = true;
+
+            int[,] kinosaal = new int[6, 11];
+
+
+            for (int reihe = 0; reihe < 4; reihe++)
+            {
+                for(int spalte = 0; spalte < 10; spalte++)
+                {
+                    kinosaal[reihe, spalte] = 8;
+                    
+                }
+                
+            }
+            for (int reihe = 4; reihe < 6; reihe++)
+            {
+                for (int spalte = 0; spalte < 10; spalte++)
+                {
+                    kinosaal[reihe, spalte] = 10;
+
+                }
+
+            }
+
+            for (int reihe = 3; reihe < 4; reihe++)
+            {
+                for (int spalte = 3; spalte < 7; spalte++)
+                {
+                    kinosaal[reihe, spalte] = 10;
+                }
+            }
+
+                switch (eingabe)
+                {
+
+                case 1:
+                    Console.WriteLine("Geben Sie den Gewünschten Platz ein (z.B A1)");
+                    Console.WriteLine();
+                    Console.Write("    ");
+                    for (int spalte = 0; spalte < 10; spalte++)
+                    {
+                        Console.Write((spalte + 1).ToString().PadLeft(4) + "    ");
+                    }
+                    Console.WriteLine();
+                    Console.WriteLine();
+
+                    for (int reihe = 0; reihe < 6; reihe++)
+                    {
+                        char reihenBuchstabe = (char)('A' + reihe);
+                        Console.Write(reihenBuchstabe + "   ");
+
+                        for (int spalte = 0; spalte < 10; spalte++)
+                        {
+                            Console.Write(kinosaal[reihe, spalte].ToString().PadLeft(4) + "    ");
+                        }
+                        Console.WriteLine();
+
+                    }
+                    Console.WriteLine();
+
+
+                    break;
+
+                case 2:
+                    Console.WriteLine("Wählen Sie Ihre gewünschte Preiskategorie\nn = Normaler Platz\np = Premiumplatz");
+                    eingabe_kategorie = Console.ReadLine();
+
+                    for (int reihe = 0; reihe < 6; reihe++)
+                    {
+                        char reihenBuchstabe = (char)('A' + reihe);
+                        Console.Write(reihenBuchstabe + "   ");
+
+                        for (int spalte = 0; spalte < 10; spalte++)
+                        {
+                            if (eingabe_kategorie == "n" && kinosaal[reihe, spalte] == 8)
+                            {
+                                Console.Write(kinosaal[reihe, spalte].ToString().PadLeft(4) + "    ");
+                            }
+                            else if (eingabe_kategorie == "p" && kinosaal[reihe, spalte] == 10)
+                            {
+                                Console.Write(kinosaal[reihe, spalte].ToString().PadLeft(4) + "    ");
+                            }
+                            else
+                            {
+                                Console.Write("    ".PadLeft(4) + "    ");
+                            }
+                        }
+                        Console.WriteLine();
+                    }
+                    break;
+
+                case 3:
+
+                    break;
+                }
         }
+       
+        static void Aufgabe1()
+        {   
+            //Array von 1-10 ausgeben
+            int[] meinArray = new int[10];
+            for (int i = 0; i < meinArray.Length; i++)
+            {
+                meinArray[i] = i + 1;
+
+                Console.WriteLine(meinArray[i]);
+            }
+            Console.WriteLine();
+
+            //Array von 10-1 ausgeben
+            int[] meinArray1 = new int[10];
+            for (int i = 0; i < meinArray1.Length; i++)
+            {
+                meinArray1[i] = 10 - i;
+
+                Console.WriteLine(meinArray1[i]);
+            }
+            Console.WriteLine();
+
+            // Array mit random zahlen 
+            int[] meinArray3 = new int[10];
+            Random zufall = new Random();
+            for(int i = 0; i < meinArray3.Length; i++)
+            {
+                meinArray3[i] = zufall.Next(1, 11);
+                Console.WriteLine(meinArray3[i]);
+            }
+            Console.WriteLine();
+        }
+        static void Aufgabe2()
+        {   
+            // Array Zufallszahlen und Summe,Mittelwert,Größte,Kleinste
+            int[] meinArray4 = new int[10];
+            Random zufall = new Random();
+            double summe = 0;
+            double mittelwert = 0;
+            int kleinste = 10;
+            int größte = 0;
+            for(int i = 0; i < meinArray4.Length; i++)
+            {
+                meinArray4[i] = zufall.Next(1, 11);
+                summe = summe + meinArray4[i];
+                Console.WriteLine(meinArray4[i]);
+            }
+            for (int i = 0; i < meinArray4.Length; i++)
+            {
+                if (meinArray4[i] > größte)
+                {
+                    größte = meinArray4[i];
+                }
+            }
+            for (int i = 0; i < meinArray4.Length; i++)
+            {
+                if (meinArray4[i] < kleinste)
+                {
+                    kleinste = meinArray4[i];
+                }
+            }
+            mittelwert = (double)summe / meinArray4.Length;
+            Console.WriteLine();
+            Console.WriteLine($"Summe = {summe}");
+            Console.WriteLine($"Mittelwert = {mittelwert}");
+            Console.WriteLine($"Größte = {größte}");
+            Console.WriteLine($"Kleinste = {kleinste}");
+        }
+        static void Aufgabe3()
+        {
+            int[] meinArray5 = new int[10];
+            Random zufall = new Random();
+            for (int i = 0; i < meinArray5.Length; i++)
+            {
+                meinArray5[i] = zufall.Next(1, 11);
+                Console.Write(meinArray5[i] + " ");
+            }
+        }
+        static void PasswortGenerator()
+        {
+
+            Console.WriteLine("Generiertes Passwort");
+            Console.WriteLine();
+            Random zufall = new Random();
+            string[] Passwort = new string[8];
+            bool gueltig = false;
+
+            while (!gueltig)
+            {
+                int groß = 0;
+                int klein = 0;
+                int zeichen = 0;
+                int zahl = 0;
+
+                for (int i = 0; i < Passwort.Length; i++)
+                {
+                    Passwort[i] = ((char)zufall.Next(33, 126)).ToString();
+
+                    if (char.IsUpper(Passwort[i][0]))
+                        groß = 1;
+                    if (char.IsLower(Passwort[i][0]))
+                        klein = 1;
+                    if (char.IsDigit(Passwort[i][0]))
+                        zahl = 1;
+                    if (char.IsPunctuation(Passwort[i][0]) || char.IsSymbol(Passwort[i][0]))
+                        zeichen = 1;
+                }
+
+                if (groß == 1 && klein == 1 && zeichen == 1 && zahl == 1)
+                    gueltig = true;
+            }
+
+            foreach (string c in Passwort)
+                Console.Write(c);
+            Console.WriteLine();
+        }
+        static void BubbleSort()
+        {
+            /*Pseudocode
+             * 
+             * Array anlegen: int[10]
+             * Variable Zufall vom Typ Random();
+             * ANFANG: For Schleife: Für Array von 0 - Array.Length
+             * Array befüllen mit Zufallszahlen
+             * ENDE:
+             * */
+
+            //int[] zahlen = new int[10];
+            //Random rnd = new Random();
+
+            //for (int i = 0; i < zahlen.Length; i++)
+            //{
+            //    zahlen[i] = rnd.Next(25, 76);
+            //}
+
+            //Console.WriteLine(string.Join(" ", zahlen));
+
+            //bool istGetauscht = true;
+            //int counter = 1;
+
+            //while (istGetauscht)
+            //{
+            //    istGetauscht = false;
+            //    int i = 0;
+
+            //    while (i < zahlen.Length - counter)
+            //    {
+            //        if (zahlen[i] > zahlen[i + 1])
+            //        {
+            //            int puffer = zahlen[i + 1];
+            //            zahlen[i + 1] = zahlen[i];
+            //            zahlen[i] = puffer;
+            //            istGetauscht = true;
+            //        }
+            //        i++;
+            //    }
+
+            //    counter++;
+            //}
+
+            //Console.WriteLine("Ausgabe von dem sortierten Array:");
+            //Console.WriteLine(string.Join(" ", zahlen));
+
+            int[] zahlen = new int[10];
+            Random rnd = new Random();
+            
+            for (int i = 0; i < zahlen.Length; i++)
+            {
+                zahlen[i] = rnd.Next(25, 76);
+            }
+
+            Console.WriteLine(string.Join(" ", zahlen));
+            bool istGetauscht = true;
+            int counter = 1;
+
+            while (istGetauscht)
+            {
+                istGetauscht = false;
+
+                for (int i = 0; i < zahlen.Length - counter; i++)
+                {
+                    if (zahlen[i] > zahlen[i + 1])
+                    {
+                        int puffer = zahlen[i + 1];
+                        zahlen[i + 1] = zahlen[i];
+                        zahlen[i] = puffer;
+                        istGetauscht = true;
+                    }
+                }
+                counter++;
+            }
+
+            //Console.WriteLine(string.Join(" ", zahlen));
+
+            foreach (int zahl in zahlen)
+            {
+                Console.Write(zahl + " ");
+            }
+            Console.WriteLine();
+
+
+
+        }
+
+
+           
+
+
+
+
+
+
+
+
 
         
 

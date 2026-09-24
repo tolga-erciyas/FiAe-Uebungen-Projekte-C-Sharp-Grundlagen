@@ -15,7 +15,7 @@ namespace Einstieg1.OOP
              * Radio:
              * 
              * - eingeschaltet : bool
-             * - lautsärke : int 
+             * - lautstärke : int 
              * - frequenz : double
              * --------------------------
              * + lauter(): void

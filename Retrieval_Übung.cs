@@ -79,12 +79,52 @@ namespace Einstieg1
             }
             else
             {
-                Console.WriteLine("Es gibt Spieler die 18 oder älter sind");*/
+                Console.WriteLine("Es gibt Spieler die 18 oder älter sind");
             int alter = 20;
             string Gruppe = alter >= 18 ? "Erwachsen" : "Minderjährig";
-            Console.WriteLine(Gruppe);
+            Console.WriteLine(Gruppe);*/
+
+
+            //Hallo();
+
+            //Console.WriteLine("Geben Sie die Entfernung in Km an");
+            //double km = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Die Entfernung in Meilen beträgt" + " " + Meilen(km) + " " + "Meilen");
+
+
+            //int[] testArray = { 1, 2, 3, 4, 5 };
+            //Console.WriteLine(testArray[0]);
+
+            //foreach(int zahl in testArray)
+            //{
+            //    //Console.Write(testArray[0] + " " + testArray[1] + " " + testArray[2] + " " + testArray[3] + " " + testArray[4] + " ");
+            //    Console.Write(zahl + " ");
+               
+            //}
+
+            int[,] matrix = new int[,] { { 1, 2 }, { 3, 4 }, { 5, 6 } };
+            foreach(int _zahl in matrix)
+            {
+                Console.WriteLine(_zahl + " ");
+            }
 
         }
+
+        static void Hallo()
+        {
+            Console.WriteLine("Hallo");
+        }
+
+        static double Meilen(double km)
+        {
+            
+            double meilen = km / 1.609344;
+                return meilen;
+            
+        }
+
+
+
 
 
 

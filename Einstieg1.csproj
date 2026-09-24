@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Einstieg1.Retrieval_Übung</StartupObject>
+    <StartupObject>Einstieg1.OOP.Assoziation_Aufgabe1</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -49,8 +49,19 @@
   <ItemGroup>
     <Compile Include="Array.cs" />
     <Compile Include="Ausgaben.cs" />
+    <Compile Include="OOP\Abstrakte_Klassen.cs" />
+    <Compile Include="OOP\Assoziation_Aufgabe1.cs" />
+    <Compile Include="OOP\Aufgaben_Dateien.cs" />
+    <Compile Include="OOP\Boxer.cs" />
+    <Compile Include="OOP\BruchRechner.cs" />
     <Compile Include="OOP\Datenkapselung.cs" />
+    <Compile Include="OOP\Enumerationen.cs" />
+    <Compile Include="OOP\Interfaces.cs" />
+    <Compile Include="OOP\Kinosaal.cs" />
     <Compile Include="OOP\RADIO.cs" />
+    <Compile Include="OOP\Radio1.cs" />
+    <Compile Include="OOP\SparSchwein1.cs" />
+    <Compile Include="OOP\Würfelspiel.cs" />
     <Compile Include="Retrieval_Übung.cs" />
     <Compile Include="OOP\Filiale_.cs" />
     <Compile Include="Funktionen.cs" />
